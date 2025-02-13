@@ -1,0 +1,124 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f9f0f0;
+  margin: 0;
+  font-family: 'Times New Roman', Courier, monospace;
+}
+
+.envelope {
+  position: relative;
+  width: 420px; /* Larger envelope */
+  height: 280px; /* Larger envelope */
+  background-color: #ff69b4;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transform-origin: top;
+  transition: transform 2s ease-in-out;
+}
+
+.envelope-flap {
+  position: absolute;
+  top: 0px; /* Adjusted for larger envelope */
+  left: 0;
+  width: 420px; /* Larger flap */
+  height: 180px; /* Larger flap */
+  background-color: #ff99cc;
+  clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+  transform-origin: top;
+  transition: transform 2s ease-in-out;
+}
+
+.letter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 420px; /* Larger letter */
+  height: 280px; /* Larger letter */
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px; /* More padding for larger text */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 3s ease-in-out, transform 3s ease-in-out;
+}
+
+.isi i {
+  margin: 25px 0; /* More spacing for larger text */
+  font-size: 20px; /* Larger font size */
+  color: #333;
+}
+
+.letter p {
+    font-size: 35px;
+    font-weight: bold;
+    color: #e91e63;
+    margin-bottom: 15px;
+}
+
+.pen z {
+    position: absolute; /* Position the "refade" text absolutely */
+    right: 10px; /* Align to the right side of the container */
+    font-size: 20px;
+    color: #333;
+    margin-top: 25px;
+}
+
+/* New Content Styles */
+.container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.header_text {
+  font-size: 24px;
+  color: #ff69b4;
+  margin-bottom: 20px;
+}
+
+.gif_container img {
+  right: 1PX;
+  width: 75px; /* Adjust the size of the GIF */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Optional: Add rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a shadow */
+  margin-TOP: 15px;
+}
+
+.buttons {
+  margin-top: 30px; /* More spacing for buttons */
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #ff69b4;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin: 0 10px;
+}
+
+button:hover {
+  background-color: #ff1493;
+}
+
+/* Open state */
+.envelope.open {
+  transform: scaleY(0,25.5);
+}
+
+.envelope.open .envelope-flap {
+  transform: rotateX(-180deg);
+}
+
+.envelope.open .letter {
+  opacity: 1;
+  transform: translate(-60%, -80%);
+}
